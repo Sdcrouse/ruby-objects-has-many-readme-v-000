@@ -242,17 +242,17 @@ We did it! Not only does an artist have many songs, but a song belongs to an art
 
 The code we have so far is pretty good. The best thing about it though, is that it accommodates future change. We've built solid associations between our `Artist` and `Song` class via our has many/belongs to code. With this foundation we can make our code even better in the following ways:
 
-### The `#add_song_by_name` Method
+### The `#add_song_by_name_and_genre` Method
 
 As it currently stands, we have to *first* create a song and *then* add it to a given artist's collection of songs. We are lazy programmers, if we could combine these two steps, that would make us happy. Furthermore, if you think about our domain model, i.e. the program we are writing to model the real-world environment of an artist and their songs, the current need to create a song and then add it to an artist doesn't really make sense. A song doesn't exist *before* an artist creates it.
 
-Instead, let's build a method `#add_song_by_name`, that takes in an argument of a name and genre and both creates the new song *and* adds that song to the artist's collection.
+Instead, let's build a method `#add_song_by_name_and_genre`, that takes in an argument of a name and genre and both creates the new song *and* adds that song to the artist's collection.
 
 ```ruby
 class Artist
   ...
 
-  def add_song_by_name(name, genre)
+  def add_song_by_name_and_genre(name, genre)
     song = Song.new(name, genre)
     @songs << song
     song.artist = self
