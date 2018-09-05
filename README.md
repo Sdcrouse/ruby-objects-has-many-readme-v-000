@@ -35,7 +35,7 @@ class Artist
 end
 ```
 
-We can set an individual instance of `Song` equal to an instance of the `Artist` class like this:
+We can set the `artist` attribute of an individual instance of `Song` equal to an instance of the `Artist` class like this:
 
 ```ruby
 ninetynine_problems = Song.new("99 Problems", "rap")
